@@ -1,0 +1,36 @@
+{
+  "name": "homeworks.api",
+  "version": "0.0.0",
+  "description": "homeworks or todo api",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "develop": "npm run build && nodemon ./dist/main.js",
+    "production": "npm run build && node ./dist/main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Germancitoz/homeworks.api.git"
+  },
+  "keywords": [
+    "typescript"
+  ],
+  "author": "Germancito",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Germancitoz/homeworks.api/issues"
+  },
+  "homepage": "https://github.com/Germancitoz/homeworks.api#readme",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.0.12",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.13",
+    "nodemon": "^2.0.14",
+    "typescript": "^4.4.4"
+  }
+}
