@@ -25,7 +25,7 @@ const startEvents = () => {
 
 const startMain = async () => {
   try {
-    //await startDatabase();
+    await startDatabase();
     startServer();
 
     setTimeout(() => {
