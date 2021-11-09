@@ -8,5 +8,8 @@ const startConfig = (app: Application): void => {
   app.set("server_port", process.env.SERVER_PORT || 3000);
 
   app.set("db_url", process.env.DATABASE_URL || "mongodb://localhost:27017/");
+
+  app.set("auth_secret", process.env.AUTH_SECRET || "secret");
+  app.set("auth_expire", process.env.AUTH_EXPIRE || 10);
 };
 export default startConfig;
