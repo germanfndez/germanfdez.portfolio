@@ -1,10 +1,10 @@
-import express, { Application } from "express";
+import express from "express";
 import cors from "cors";
 import morgan from "morgan";
 
 import startConfig from "../config/index.js";
 
-const app: Application = express();
+const app: express.Application = express();
 
 // Middleware
 app.use(express.json());
