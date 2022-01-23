@@ -1,7 +1,7 @@
 import app from "./server/index.js";
 import mongoose from "mongoose";
 
-const startServer = () => {
+const startServer = (): void => {
   console.log("starting server");
   app.listen(app.get("server_port"), () => {
     console.log(
