@@ -7,14 +7,16 @@ export const displayMessage = (display, html) => {
   display.appendChild(element);
 };
 
-export const displayInputMessage = (display, command) => {
+export const displayInputMessage = (display, command, args) => {
   const dirElement = document.createElement('span');
   dirElement.classList.add('green');
-  dirElement.textContent = `${DIR}: ${command}`;
+  dirElement.textContent = `${DIR}: ${command} ${args.join(' ')}`;
 
   const newElement = document.createElement('p');
   newElement.innerHTML =
-    COMMANDS[command] ?? CONSOLE_MESSAGES.MESSAGES['es'].not_found;
+    typeof COMMANDS[command] == 'function'
+      ? COMMANDS[command](args)
+      : CONSOLE_MESSAGES.MESSAGES['es'].not_found;
 
   display.appendChild(dirElement);
   display.appendChild(newElement);

@@ -13,5 +13,12 @@ export const CONSOLE_MESSAGES = {
 };
 
 export const COMMANDS = {
-  ['help']: '<a href="www.youtube.com">Youtube</a>',
+  ['help']: (args) => {
+    console.log(args);
+    if (args[0]) {
+      return '<a href="www.youtube.com">Youtube</a>';
+    } else {
+      return '<p class="text light-green">Comandos disponibles:</p>';
+    }
+  },
 };

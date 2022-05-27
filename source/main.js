@@ -2,28 +2,34 @@ import { CONSOLE_MESSAGES } from './data.js';
 import { displayInputMessage, displayMessage } from './display.js';
 import { $ } from './lib.js';
 
-const language = 'es';
+const terminal = {
+  language: 'es',
+  commandsHistory: [],
+  currentIndex: -1,
+};
 const $display = $('#display');
 const $input = $('#read');
 
-let commandsHistory = [];
-let currentIndex = -1;
-
 (function () {
-  displayMessage($display, CONSOLE_MESSAGES.BOOT[language]);
+  displayMessage($display, CONSOLE_MESSAGES.BOOT[terminal.language]);
 })();
 
 $input.addEventListener('keyup', (event) => {
   if (event.key === 'Enter') {
-    const inputValue = $input.value;
-    inputValue.trim() === '' ? null : displayInputMessage($display, inputValue);
+    const fullCommand = $input.value.split(' ');
+    const command = fullCommand[0];
+    const args = fullCommand.slice(1);
+
+    command.trim() === '' ? null : displayInputMessage($display, command, args);
     $input.value = '';
-    commandsHistory = [inputValue, ...commandsHistory];
-    currentIndex = -1;
+    terminal.commandsHistory = [command, ...terminal.commandsHistory];
+    terminal.currentIndex = -1;
     return;
   }
 
   if (event.key === 'ArrowUp' || event.key === 'ArrowDown') {
+    let { currentIndex, commandsHistory } = terminal;
+
     if (commandsHistory.length === 0) {
       return;
     }
