@@ -43,6 +43,14 @@ body {
   text-shadow: 0 0 8px rgb(19, 185, 68), 0 0 1px rgb(63, 200, 56);
 }
 
+.bold {
+  font-weight: bold;
+}
+
+.italic {
+  font-style: italic;
+}
+
 input {
   background-color: transparent;
   border: 0;
