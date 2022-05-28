@@ -28,20 +28,18 @@ $input.addEventListener('keyup', (event) => {
   }
 
   if (event.key === 'ArrowUp' || event.key === 'ArrowDown') {
-    let { currentIndex, commandsHistory } = terminal;
-
-    if (commandsHistory.length === 0) {
+    if (terminal.commandsHistory.length === 0) {
       return;
     }
 
-    event.key === 'ArrowUp' ? currentIndex++ : currentIndex--;
-    if (currentIndex > commandsHistory.length - 1) {
-      currentIndex = commandsHistory.length - 1;
-    } else if (currentIndex < 0) {
-      currentIndex = 0;
+    event.key === 'ArrowUp' ? terminal.currentIndex++ : terminal.currentIndex--;
+    console.log(terminal.currentIndex);
+    if (terminal.currentIndex > terminal.commandsHistory.length - 1) {
+      terminal.currentIndex = terminal.commandsHistory.length - 1;
+    } else if (terminal.currentIndex < 0) {
+      terminal.currentIndex = 0;
     }
-
-    $input.value = commandsHistory[currentIndex];
+    $input.value = terminal.commandsHistory[terminal.currentIndex];
   }
 });
 
