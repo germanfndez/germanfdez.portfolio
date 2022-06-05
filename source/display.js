@@ -1,4 +1,5 @@
 import { COMMANDS, CONSOLE_MESSAGES, DIR } from './data.js';
+import { terminal } from './main.js';
 
 export const displayMessage = (display, html) => {
   const element = document.createElement('p');
@@ -16,7 +17,7 @@ export const displayInputMessage = (display, command, args) => {
   newElement.innerHTML =
     typeof COMMANDS[command] == 'function'
       ? COMMANDS[command](args)
-      : CONSOLE_MESSAGES.MESSAGES['es'].not_found;
+      : CONSOLE_MESSAGES.MESSAGES[terminal.language].not_found;
 
   display.appendChild(dirElement);
   display.appendChild(newElement);

@@ -2,23 +2,26 @@ export const DIR = '@Germancito';
 
 export const CONSOLE_MESSAGES = {
   ['BOOT']: {
-    ['es']:
-      '<p class="text light-green">Portfolio German Fernandez<br>Escribe help para ver los comandos disponibles</p>',
+    ['en']:
+      '<p class="text light-green">German Fernandez Terminal | v0.1<br>See available commands, type <i>help</i></p>',
   },
   ['MESSAGES']: {
-    ['es']: {
-      ['not_found']: '<p class="text light-green">Comando no encontrado</p>',
+    ['en']: {
+      ['not_found']: '<p class="text light-green">Command not found</p>',
     },
   },
 };
 
 export const COMMANDS = {
   ['help']: (args) => {
-    console.log(args);
-    if (args[0]) {
-      return '<a href="www.youtube.com">Youtube</a>';
-    } else {
-      return '<p class="text light-green">Comandos disponibles:</p>';
-    }
+    return `<p class="text light-green">Available commands:</p>
+      <p class="text light-green italic">help - Show available commands</p>
+      <p class="text light-green italic">clear - Clear terminal</p>
+      <p class="text light-green italic">about - Show German information</p>
+      <p class="text light-green italic">contact - Show contact information</p>
+    `;
+  },
+  ['clear']: (args) => {
+    return window.location.reload();
   },
 };

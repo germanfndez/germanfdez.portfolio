@@ -2,8 +2,8 @@ import { CONSOLE_MESSAGES } from './data.js';
 import { displayInputMessage, displayMessage } from './display.js';
 import { $ } from './lib.js';
 
-const terminal = {
-  language: 'es',
+export const terminal = {
+  language: 'en',
   commandsHistory: [],
   currentIndex: -1,
 };
