@@ -3,7 +3,7 @@ function App() {
     <div className="mt-72 text-center">
       <h1 className="text-7xl font-bold">I'm German Fernandez</h1>
       <h2 className="text-4xl">Software Developer</h2>
-      <h2 className="text-3xl mt-60">Website in progress</h2>
+      <h2 className="text-3xl mt-60">Website in progress - This is dev</h2>
       <a
         target="_blank"
         rel="noreferrer"
