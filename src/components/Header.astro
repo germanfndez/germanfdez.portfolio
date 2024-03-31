@@ -1,0 +1,45 @@
+--- 
+import HeaderItem from "./HeaderItem.astro";
+
+interface NavItem {
+  name: string;
+  label: string;
+  href: string;
+}
+
+const NAV_ITEMS: NavItem[] = [
+  {
+    name: "home",
+    label : "home",
+    href: "/"
+  },
+  {
+    name: "experience",
+    label : "experience",
+    href: "/#experience"
+  },
+  {
+    name: "about me",
+    label : "about-me",
+    href: "/#about"
+  },
+  {
+    name: "contact",
+    label : "contact",
+    href: "/#contact"
+  }
+]
+
+
+---
+<header class="flex justify-center mt-3 max-w-full">
+  <nav class="flex px-4 py-1 gap-2 text-[0.85rem] text-secondary/50">
+    {
+      NAV_ITEMS.map(({href, label, name}) => (
+        <HeaderItem {label} {href}>
+          {name}
+        </HeaderItem>
+      ))
+    }
+  </na>
+</header>
