@@ -1,64 +1,56 @@
 ---
 interface Props {
-	title: string;
+  title: string
 }
 
-const { title } = Astro.props;
+const { title } = Astro.props
 
-import '@fontsource/geist-sans/100.css';
-import '@fontsource/geist-sans/400.css';
-import '@fontsource/geist-sans/700.css';
-import '@fontsource/geist-sans/800.css';
+import '@fontsource-variable/inter'
 
-import Header from '@components/Header.astro';
-
+import Header from '@components/Header.astro'
 ---
-
-
-
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
 
-	
-	<body class={`bg-primary text-secondary font-sans`}>
-		<Header />
-		<slot/>
-	</body>
-
-
+  <body class={`bg-primary text-secondary font-sans`}>
+    <Header />
+    <slot />
+  </body>
 </html>
 
 <style is:global>
-	body {
-  	font-family: 'Geist Sans', sans-serif;
-	}
+  body {
+    font-family: 'Inter Variable', sans-serif;
+  }
 
-	h1, h2, h3, h4, h5, h6 {
-		font-family: 'Geist Sans', monospace;
-		font-weight: 400;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: 'Inter Variable', monospace;
+    font-weight: 400;
+  }
 
-	}
+  p {
+    font-family: 'Inter Variable', monospace;
+    font-weight: 400;
+  }
 
-	p {
-		font-family: 'Geist Sans', monospace;
-		font-weight: 400;
-	}
-
-	section {
-		width: 100%;
-		max-width: 800px;
-		margin: 0 auto;
-	}
-
-
-
+  section {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 24px;
+  }
 </style>
