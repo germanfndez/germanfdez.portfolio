@@ -7,25 +7,24 @@ const EXPERIENCE = [
     title: 'Software Developer',
     company: 'n39',
     description:
-      'Building scalable solutions for a large number of users, involving frontend and backend technologies.',
+      'I have excelled in maintaining various service types across different regions, ensuring seamless and efficient operations in all locations. I led development teams to ensure uninterrupted expansion and scaling, optimizing performance and effectively managing resources.',
   },
   {
-    date: 'Septiembre 2022',
-    title: 'Principal Frontend Engineer',
-    company: 'Adevinta Spain',
+    date: 'September 2022',
+    title: 'Scripting Developer',
+    company: 'cfx.re freelance',
     description:
-      'Responsable de la plataforma, componentes y utilidades para la creación y desarrollo de aplicaciones web. Mejora de un 30% en la entrega de software. Implantación de medidas de integración continua y despliegue con A/B testing en más de 15 equipos.',
+      'I`ve excelled in scaling servers for major gaming communities, leading development teams to ensure seamless expansion. I optimized performance, managed resources, and crafted innovative solutions to surpass player expectations.',
   },
 ]
 ---
 
 <section>
-  <h2 class="text-md opacity-60">.experience</h2>
-
+  <h2 class="text-md mb-4 opacity-60">.experience</h2>
   <ol class="relative mt-4">
     {
       EXPERIENCE.map((experience) => (
-        <li class="">
+        <li>
           <ExperienceItem {...experience} />
         </li>
       ))
