@@ -6,8 +6,7 @@ interface Props {
 const { title } = Astro.props
 
 import '@fontsource-variable/inter'
-
-import Header from '@components/Header.astro'
+import { ViewTransitions } from 'astro:transitions'
 ---
 
 <!doctype html>
@@ -19,38 +18,50 @@ import Header from '@components/Header.astro'
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
+    <ViewTransitions />
   </head>
 
-  <body class={`bg-primary text-secondary font-sans`}>
-    <Header />
+  <body class={`bg-[#121212] text-secondary font-sans`}>
     <slot />
+
+    <style is:global>
+      @font-face {
+        font-family: 'Geist';
+        src: url('/fonts/GeistVF.ttf') format('truetype');
+        font-weight: 100 900;
+      }
+
+      body {
+        font-family: 'Geist', monospace;
+        font-weight: 400;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: 'Geist', monospace;
+        font-weight: 400;
+      }
+
+      p {
+        font-family: 'Geist', monospace;
+        font-weight: 400;
+      }
+
+      section {
+        width: 100%;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 24px;
+      }
+
+      ::selection {
+        background-color: #2b2b2b;
+        color: #fff;
+      }
+    </style>
   </body>
 </html>
-
-<style is:global>
-  body {
-    font-family: 'Inter Variable', sans-serif;
-  }
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-family: 'Inter Variable', monospace;
-    font-weight: 400;
-  }
-
-  p {
-    font-family: 'Inter Variable', monospace;
-    font-weight: 400;
-  }
-
-  section {
-    width: 100%;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 24px;
-  }
-</style>
