@@ -22,7 +22,7 @@ const { title, company, description, link, date } = Astro.props
       <div class="flex gap-2">
         <h3 class="text-sm font-bold text-white">{title}</h3>
         <time
-          class="m-0 rounded-lg bg-neutral-700 p-[2px] px-2 text-xs text-gray-600/80 text-white dark:text-white/80"
+          class={`m-0 ${date !== 'Now' ? 'hidden md:block' : 'block'} rounded-lg bg-neutral-700 p-[2px] px-2 text-xs text-gray-600/80 text-white dark:text-white/80`}
           >{date}</time
         >
       </div>
